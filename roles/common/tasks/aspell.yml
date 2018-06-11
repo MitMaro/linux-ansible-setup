@@ -1,0 +1,10 @@
+- name: Installing Aspell
+  become: true
+  package:
+    name: aspell
+    state: latest
+- name: Installing Aspell English Dictonary
+  become: true
+  package:
+    name: aspell-en
+    state: latest

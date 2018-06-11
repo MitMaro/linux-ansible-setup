@@ -1,0 +1,4 @@
+- name: Create download cache directory
+  file:
+    path: /home/{{ ansible_user_id }}/.ansible/downloads/
+    state: directory

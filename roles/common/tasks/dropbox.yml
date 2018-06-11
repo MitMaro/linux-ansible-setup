@@ -1,0 +1,13 @@
+# Dropbox
+- name: Download Dropbox
+  get_url:
+    url: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/dropbox_2015.10.28_amd64.deb
+- name: Install Dropbox
+  become: true
+  apt:
+    deb: /home/{{ ansible_user_id }}/.ansible/downloads/dropbox_2015.10.28_amd64.deb
+- name: Setup Dropbox
+  shell: "dropbox start --install"
+  args:
+    creates: "/home/{{ ansible_user_id }}/.dropbox/dropboxd"

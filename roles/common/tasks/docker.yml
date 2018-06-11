@@ -1,0 +1,49 @@
+- name: Add Docker signing key
+  become: true
+  apt_key:
+    id: 0EBFCD88
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+- name: Add Docker apt repository
+  become: true
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable
+    state: present
+
+- name: Install docker packages
+  become: true
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - curl
+    - software-properties-common
+    - apt-transport-https
+    - ca-certificates
+    - docker-ce
+
+- name: Add user to docker group
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+
+- name: Install docker-compose
+  become: true
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    owner: root
+    mode: "a+x"
+
+# see: https://github.com/moby/moby/issues/30343
+- name: Docker NetworkManager Fix
+  become: true
+  blockinfile:
+    path: /etc/NetworkManager/NetworkManager.conf
+    block: |
+        [keyfile]
+        unmanaged-devices=interface-name:docker0;interface-name:veth*
+  notify:
+    - restart network-manager

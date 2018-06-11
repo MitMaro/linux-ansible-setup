@@ -1,0 +1,11 @@
+- name: Install Terminator PPA
+  become: true
+  apt_repository:
+    repo: "ppa:gnome-terminator"
+    state: present
+    codename: xenial
+- name: Installing Terminator
+  become: true
+  package:
+    name: terminator
+    state: latest

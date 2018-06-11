@@ -1,0 +1,5 @@
+- name: Install Chromium
+  become: true
+  package:
+    name: chromium-browser
+    state: latest

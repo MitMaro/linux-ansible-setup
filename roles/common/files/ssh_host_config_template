@@ -1,0 +1,9 @@
+#####
+# this file is managed by ansible, do not modify
+#####
+
+Host {{ item.name }}
+    HostName {{ item.host }}
+    User {{ item.user }}
+    IdentityFile {{ item.identity }}
+

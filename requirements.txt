@@ -1,0 +1,3 @@
+# required Python modules for ansible
+
+ansible==2.5

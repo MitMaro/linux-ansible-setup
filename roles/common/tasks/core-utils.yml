@@ -1,0 +1,23 @@
+- name: Install tree
+  become: true
+  package:
+    name: tree
+    state: latest
+
+- name: Install vim
+  become: true
+  package:
+    name: vim
+    state: latest
+
+- name: Install GNU awk
+  become: true
+  package:
+    name: gawk
+    state: latest
+
+- name: Install Gnome tweak tool
+  become: true
+  package:
+    name: gnome-tweak-tool
+    state: latest

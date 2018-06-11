@@ -1,0 +1,5 @@
+- name: Installing Gimp
+  become: true
+  package:
+    name: gimp
+    state: latest

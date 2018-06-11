@@ -1,0 +1,10 @@
+- name: Install KeePassXC PPA
+  become: true
+  apt_repository:
+    repo: 'ppa:phoerious/keepassxc'
+    state: present
+- name: Installing KeePassXC
+  become: true
+  package:
+    name: keepassxc
+    state: latest

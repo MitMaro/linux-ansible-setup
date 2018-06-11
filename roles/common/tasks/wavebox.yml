@@ -1,0 +1,20 @@
+- name: Install Microsoft Fonts
+  become: true
+  apt:
+    name: ttf-mscorefonts-installer
+    state: latest
+- name: Add Wavebox signing key
+  become: true
+  apt_key:
+    id: A8DED955C50A5D22
+    url: https://wavebox.io/dl/client/repo/archive.key
+- name: Add Wavebox apt repository
+  become: true
+  apt_repository:
+    repo: deb https://wavebox.io/dl/client/repo/ x86_64/
+    state: present
+- name: Install Wavebox
+  become: true
+  apt:
+    name: wavebox
+    state: latest

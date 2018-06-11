@@ -1,0 +1,6 @@
+
+- name: a playbook to setup a System76 laptop
+  hosts: local
+  connection: local
+  roles:
+    - common

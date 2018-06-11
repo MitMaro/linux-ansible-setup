@@ -1,0 +1,9 @@
+- name: "Checkout Git Repositories"
+  git:
+    update: no
+    accept_hostkey: yes
+    repo: "{{ item.repo }}"
+    remote: "{{ item.remote_name }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ git_repositories }}"
+

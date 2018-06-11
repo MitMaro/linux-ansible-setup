@@ -1,0 +1,24 @@
+- name: Setup SSH Config
+  copy:
+    src: "files/ssh_config"
+    dest: "/home/{{ ansible_user_id }}/.ssh/config"
+    mode: 0600
+- name: Create SSH configs directory
+  file:
+    path: "/home/{{ ansible_user_id }}/.ssh/config.d"
+    state: directory
+- name: Add SSH configs
+  template:
+    src: "files/ssh_host_config_template"
+    dest: "/home/{{ ansible_user_id }}/.ssh/config.d/{{ item.name }}"
+  with_items: "{{ ssh_config }}"
+
+# setup ssh keys
+#- name: Copy private ssh keys
+#  copy:
+#    src: keys/myapp.private
+#    dest: "/home/{{ deploy_user }}/.ssh/{{ item }}"
+#    mode: 0600
+#  with_items:
+#    - app_keys/id_dsa.pub
+#    - app_keys/id_dsa

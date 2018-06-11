@@ -1,0 +1,5 @@
+- name: Installing Stow
+  become: true
+  package:
+    name: stow
+    state: latest

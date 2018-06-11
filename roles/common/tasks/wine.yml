@@ -1,0 +1,25 @@
+- name: Check if i386 is enabled
+  shell: dpkg --print-foreign-architectures | grep i386
+  register: result_i386_check
+  changed_when: result_i386_check.rc == 1
+  failed_when: result_i386_check.rc > 1
+- name: Enable i386 architecture
+  become: true
+  command: dpkg --add-architecture i386
+  when: result_i386_check.rc == 1
+- name: Add Wine signing key
+  become: true
+  apt_key:
+    id: 5FCBF54A
+    url: https://dl.winehq.org/wine-builds/Release.key
+- name: Add Wine apt repository
+  become: true
+  apt_repository:
+    repo: deb https://dl.winehq.org/wine-builds/ubuntu artful main
+    state: present
+- name: Install Wine
+  become: true
+  apt:
+    name: winehq-stable
+    install_recommends: true
+    state: latest

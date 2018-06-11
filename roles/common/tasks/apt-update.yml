@@ -1,0 +1,4 @@
+- name: Update APT repositories cache
+  become: true
+  apt:
+    update_cache: yes

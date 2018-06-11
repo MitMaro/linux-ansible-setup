@@ -1,0 +1,21 @@
+- include: pre.yml
+- include: apt-update.yml
+
+- include: aspell.yml
+- include: chromium.yml
+- include: core-utils.yml
+- include: docker.yml
+- include: dropbox.yml
+- include: font-iosevka.yml
+- include: gimp.yml
+- include: git-rebase-tool.yml
+- include: git-repositories.yml
+- include: keepassxc.yml
+- include: nvm.yml
+- include: slack.yml
+- include: ssh.yml
+- include: stow.yml
+- include: terminator.yml
+- include: wavebox.yml
+# Not ready yet
+# - include: wine.yml

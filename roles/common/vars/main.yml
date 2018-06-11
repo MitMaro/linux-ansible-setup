@@ -1,0 +1,18 @@
+git_repositories:
+  - dest: /home/{{ ansible_user_id }}/code/cts-website
+    repo: "git@github.com:CTS-NL/CTS-NL.github.io.git"
+    remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/dot-files
+    repo: "git@github.com:MitMaro/dot-files.git"
+    remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/eslint-config-mitmaro
+    repo: "git@github.com:MitMaro/eslint-config-mitmaro.git"
+    remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/ide-sync
+    repo: "git@github.com:MitMaro/ide-sync.git"
+    remote_name: "gh"
+ssh_config:
+  - name: github
+    host: github.org
+    user: git
+    identity: ~/.ssh/oryx-pro-github.key
