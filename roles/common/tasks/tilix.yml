@@ -1,0 +1,5 @@
+- name: Installing Tilix
+  become: true
+  package:
+    name: tilix
+    state: latest

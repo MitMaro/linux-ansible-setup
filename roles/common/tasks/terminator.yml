@@ -1,11 +1,11 @@
-- name: Install Terminator PPA
+- name: Remove Terminator PPA
   become: true
   apt_repository:
     repo: "ppa:gnome-terminator"
-    state: present
+    state: absent
     codename: xenial
-- name: Installing Terminator
+- name: Remove Terminator
   become: true
   package:
     name: terminator
-    state: latest
+    state: absent
