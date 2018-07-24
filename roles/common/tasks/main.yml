@@ -4,6 +4,7 @@
 - include: aspell.yml
 - include: chromium.yml
 - include: core-utils.yml
+- include: dev-libs.yml
 - include: docker.yml
 - include: dropbox.yml
 - include: font-iosevka.yml
@@ -12,6 +13,7 @@
 - include: git-repositories.yml
 - include: keepassxc.yml
 - include: nvm.yml
+- include: rust.yml
 - include: slack.yml
 - include: ssh.yml
 - include: stow.yml

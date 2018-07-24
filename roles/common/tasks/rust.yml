@@ -1,0 +1,15 @@
+- name: Check if rustup is installed
+  shell: rustup --version
+  register: rustup_check_install
+  failed_when: rustup_check_install.rc == 1
+  changed_when: rustup_check_install.rc != 0
+
+- name: Download rustup installer
+  get_url:
+    url: https://sh.rustup.rs
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/rustup-init.sh
+    mode: "a+x"
+
+- name: install rustup
+  command: /home/{{ ansible_user_id }}/.ansible/downloads/rustup-init.sh -y
+  when: rustup_check_install.rc != 0

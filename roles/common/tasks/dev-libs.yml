@@ -1,0 +1,35 @@
+- name: Install build-essential
+  become: true
+  package:
+    name: build-essential
+    state: latest
+
+- name: Install cmake
+  become: true
+  package:
+    name: cmake
+    state: latest
+
+- name: Install liblzma-dev
+  become: true
+  package:
+    name: liblzma-dev
+    state: latest
+
+- name: Install libncurses5-dev
+  become: true
+  package:
+    name: libncurses5-dev
+    state: latest
+
+- name: Install libssl-dev
+  become: true
+  package:
+    name: libssl-dev
+    state: latest
+
+- name: Install pkg-config
+  become: true
+  package:
+    name: pkg-config
+    state: latest
