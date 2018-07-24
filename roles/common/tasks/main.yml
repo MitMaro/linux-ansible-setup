@@ -20,5 +20,3 @@
 - include: terminator.yml
 - include: tilix.yml
 - include: wavebox.yml
-# Not ready yet
-# - include: wine.yml
