@@ -15,4 +15,4 @@ ssh_config:
   - name: github
     host: github.org
     user: git
-    identity: ~/.ssh/oryx-pro-github.key
+    identity: ~/.ssh/{{ ansible_hostname }}-github.key

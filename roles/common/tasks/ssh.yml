@@ -13,12 +13,10 @@
     dest: "/home/{{ ansible_user_id }}/.ssh/config.d/{{ item.name }}"
   with_items: "{{ ssh_config }}"
 
-# setup ssh keys
-#- name: Copy private ssh keys
-#  copy:
-#    src: keys/myapp.private
-#    dest: "/home/{{ deploy_user }}/.ssh/{{ item }}"
-#    mode: 0600
-#  with_items:
-#    - app_keys/id_dsa.pub
-#    - app_keys/id_dsa
+- name: Copy private ssh keys for {{ ansible_hostname }}
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ ansible_user_id }}/.ssh/"
+    mode: 0600
+  with_fileglob:
+    - "/home/{{ ansible_user_id }}/Sync/ssh-keys/{{ ansible_hostname }}-*"

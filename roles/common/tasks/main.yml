@@ -1,5 +1,6 @@
 - include: pre.yml
 - include: apt-update.yml
+- include: ssh.yml
 
 - include: aspell.yml
 - include: chromium.yml
@@ -15,7 +16,6 @@
 - include: nvm.yml
 - include: rust.yml
 - include: slack.yml
-- include: ssh.yml
 - include: stow.yml
 - include: terminator.yml
 - include: tilix.yml
