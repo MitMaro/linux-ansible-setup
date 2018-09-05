@@ -20,3 +20,6 @@
 - include: terminator.yml
 - include: tilix.yml
 - include: wavebox.yml
+
+- include_tasks: "system/{{ ansible_product_name }}.yml"
+  when: ansible_product_name is defined
