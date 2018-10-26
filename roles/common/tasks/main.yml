@@ -13,6 +13,7 @@
 - include: gimp.yml
 - include: git-rebase-tool.yml
 - include: git-repositories.yml
+- include: gnome-extensions.yml
 - include: keepassxc.yml
 - include: nvm.yml
 - include: rust.yml

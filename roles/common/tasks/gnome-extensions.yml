@@ -1,0 +1,6 @@
+- name: Installing Gnome Shell Extension App Indicator
+  become: true
+  package:
+    name: gnome-shell-extension-appindicator
+    state: latest
+
