@@ -11,6 +11,9 @@ git_repositories:
   - dest: /home/{{ ansible_user_id }}/code/ide-sync
     repo: "git@github.com:MitMaro/ide-sync.git"
     remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/programming-problems
+    repo: "git@github.com:MitMaro/programming-problem-solutions.git"
+    remote_name: "gh"
 ssh_config:
   - name: github
     host: github.org
