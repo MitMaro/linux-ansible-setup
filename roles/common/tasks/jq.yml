@@ -1,0 +1,5 @@
+- name: Installing jq
+  become: true
+  package:
+    name: jq
+    state: latest
