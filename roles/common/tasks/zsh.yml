@@ -1,0 +1,5 @@
+- name: Installing Aspell
+  become: true
+  package:
+    name: zsh
+    state: latest
