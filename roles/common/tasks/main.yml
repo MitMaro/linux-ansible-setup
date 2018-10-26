@@ -16,6 +16,7 @@
 - include: gnome-extensions.yml
 - include: imagemagick.yml
 - include: jq.yml
+- include: kazam.yml
 - include: keepassxc.yml
 - include: nvm.yml
 - include: rust.yml
