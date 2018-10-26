@@ -14,6 +14,9 @@ git_repositories:
   - dest: /home/{{ ansible_user_id }}/code/programming-problems
     repo: "git@github.com:MitMaro/programming-problem-solutions.git"
     remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/kattis-runner
+    repo: "git@github.com:MitMaro/kattis-runner.git"
+    remote_name: "gh"
 ssh_config:
   - name: github
     host: github.org
