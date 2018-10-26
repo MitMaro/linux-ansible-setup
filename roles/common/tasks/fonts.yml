@@ -2,6 +2,8 @@
   file:
     path: /home/{{ ansible_user_id }}/.local/share/fonts/
     state: directory
+
+# Iosevka
 - name: Download Iosevka Default Fonts
   get_url:
     url: https://github.com/be5invis/Iosevka/releases/download/v1.14.3/iosevka-ss09-1.14.3.zip
@@ -40,3 +42,15 @@
     dest: /home/{{ ansible_user_id }}/.local/share/fonts/
   notify:
     - "rebuild fonts cache"
+
+# Nerd Fonts DejaVu Sans Mono
+- name: Download DejaVu Sans Mono Font
+  get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/deja-vu-sans-mono-nerd-font-complete.tff
+- name: Copy DejaVu Sans Mono Font
+  copy:
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/deja-vu-sans-mono-nerd-font-complete.tff
+    dest: /home/{{ ansible_user_id }}/.local/share/fonts/
+  notify:
+  - "rebuild fonts cache"

@@ -8,7 +8,7 @@
 - include: dev-libs.yml
 - include: docker.yml
 - include: dropbox.yml
-- include: font-iosevka.yml
+- include: fonts.yml
 - include: gimp.yml
 - include: git-rebase-tool.yml
 - include: git-repositories.yml
