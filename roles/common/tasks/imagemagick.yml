@@ -1,0 +1,5 @@
+- name: Installing imagemagick
+  become: true
+  package:
+    name: imagemagick
+    state: latest
