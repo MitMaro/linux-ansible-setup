@@ -1,0 +1,8 @@
+- name: Set max user watches
+  become: true
+  copy:
+    src: "files/sysctl/max_user_watches.conf"
+    dest: "/etc/sysctl.d/10-max_user_watches.conf"
+    mode: 0644
+  notify:
+    - "reload sysctl"

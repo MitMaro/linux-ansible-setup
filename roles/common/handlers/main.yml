@@ -2,3 +2,6 @@
   become: yes
   shell: 'fc-cache -v -f'
 
+- name: 'reload sysctl'
+  become: yes
+  shell: 'sysctl --system'
