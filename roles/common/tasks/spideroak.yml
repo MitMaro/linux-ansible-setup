@@ -1,0 +1,17 @@
+- name: Add SpiderOak signing key
+  become: true
+  apt_key:
+    id: 573E3D1C51AE1B3D
+    keyserver: keyserver.ubuntu.com
+
+- name: Add SipderOak APT sources
+  become: true
+  apt_repository:
+    repo: deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted
+
+- name: Install SpiderOak
+  become: true
+  package:
+    name: spideroakone
+    state: latest
+

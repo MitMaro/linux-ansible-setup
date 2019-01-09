@@ -20,6 +20,7 @@
 - include: nvm.yml
 - include: rust.yml
 - include: slack.yml
+- include: spideroak.yml
 - include: stow.yml
 - include: sysctl.yml
 - include: terminator.yml
