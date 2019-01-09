@@ -31,4 +31,12 @@
 - include: git-repositories.yml
 
 - include_tasks: "system/{{ ansible_product_name }}.yml"
-  when: ansible_product_name is defined
+  when:
+    - ansible_product_name is defined
+    - (role_path + '/tasks/system/' + ansible_product_name + '.yml') is is_file
+
+- include_tasks: "host/{{ ansible_hostname }}.yml"
+  when:
+    - ansible_hostname is defined
+    - (role_path + '/tasks/host/' + ansible_hostname + '.yml') is is_file
+

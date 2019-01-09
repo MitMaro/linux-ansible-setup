@@ -1,0 +1,11 @@
+- name: Install System76 PPA
+  become: true
+  apt_repository:
+    repo: 'ppa:system76-dev/stable'
+    state: present
+- name: Installing System76 Driver
+  become: true
+  package:
+    name: system76-driver
+    state: latest
+
