@@ -1,3 +1,9 @@
+- name: 'restart network-manager'
+  become: yes
+  service:
+    name: network
+    state: restarted
+
 - name: 'rebuild fonts cache'
   become: yes
   shell: 'fc-cache -v -f'
