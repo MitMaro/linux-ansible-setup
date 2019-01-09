@@ -9,6 +9,8 @@
   apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable
     state: present
+  notify:
+    - "update apt package list"
 
 - name: Install docker packages
   become: true

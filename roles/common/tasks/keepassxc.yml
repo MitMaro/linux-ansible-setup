@@ -3,6 +3,8 @@
   apt_repository:
     repo: 'ppa:phoerious/keepassxc'
     state: present
+  notify:
+    - "update apt package list"
 - name: Installing KeePassXC
   become: true
   package:

@@ -13,6 +13,8 @@
   apt_repository:
     repo: deb https://wavebox.io/dl/client/repo/ x86_64/
     state: present
+  notify:
+    - "update apt package list"
 - name: Install Wavebox
   become: true
   apt:

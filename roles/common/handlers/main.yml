@@ -11,3 +11,8 @@
 - name: 'reload sysctl'
   become: yes
   shell: 'sysctl --system'
+
+- name: 'update apt package list'
+  become: yes
+  apt:
+    update_cache: yes

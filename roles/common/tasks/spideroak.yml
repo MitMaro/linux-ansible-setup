@@ -8,6 +8,8 @@
   become: true
   apt_repository:
     repo: deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted
+  notify:
+    - "update apt package list"
 
 - name: Install SpiderOak
   become: true

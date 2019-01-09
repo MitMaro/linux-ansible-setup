@@ -3,6 +3,8 @@
   apt_repository:
     repo: 'ppa:system76-dev/stable'
     state: present
+  notify:
+    - "update apt package list"
 - name: Installing System76 Driver
   become: true
   package:
