@@ -1,0 +1,20 @@
+- name: Install Mozilla Security PPA
+  become: true
+  apt_repository:
+    codename: xenial
+    repo: 'ppa:ubuntu-mozilla-security/ppa'
+    state: present
+  notify:
+    - "update apt package list"
+
+- name: Installing Firefox
+  become: true
+  package:
+    name: firefox
+    state: latest
+
+- name: Installing Thunderbird
+  become: true
+  package:
+    name: thunderbird
+    state: latest
