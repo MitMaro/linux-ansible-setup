@@ -10,7 +10,7 @@ if ! command -v pip &> /dev/null ; then
 fi
 
 if ! ( command -v ansible &> /dev/null && [[ "$(ansible --version | head -1 | awk '{print $2}')" == "2.5.0" ]] ); then
-	echo pip install --user -r requirements.txt
+	pip install --user -r requirements.txt
 fi
 
 echo "Starting Ansible"
