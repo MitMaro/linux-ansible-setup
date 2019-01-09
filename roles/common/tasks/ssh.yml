@@ -1,12 +1,20 @@
+- name: Create SSH directory
+  file:
+    path: /home/{{ ansible_user_id }}/.ssh/
+    state: directory
+    mode: 0700
+
 - name: Setup SSH Config
   copy:
     src: "files/ssh_config"
     dest: "/home/{{ ansible_user_id }}/.ssh/config"
     mode: 0600
+
 - name: Create SSH configs directory
   file:
     path: "/home/{{ ansible_user_id }}/.ssh/config.d"
     state: directory
+
 - name: Add SSH configs
   template:
     src: "files/ssh_host_config_template"
