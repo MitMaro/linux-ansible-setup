@@ -7,7 +7,6 @@
 - include: core-utils.yml
 - include: dev-libs.yml
 - include: docker.yml
-- include: dropbox.yml
 - include: ffmpeg.yml
 - include: fonts.yml
 - include: gimp.yml

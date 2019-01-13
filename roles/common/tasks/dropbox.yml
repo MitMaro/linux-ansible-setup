@@ -1,6 +1,0 @@
-# Dropbox
-- name: Removing Dropbox
-  become: true
-  package:
-    name: dropbox
-    state: absent
