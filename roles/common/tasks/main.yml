@@ -23,7 +23,6 @@
 - include: spideroak.yml
 - include: stow.yml
 - include: sysctl.yml
-- include: terminator.yml
 - include: tilix.yml
 - include: wavebox.yml
 - include: zsh.yml
