@@ -1,0 +1,26 @@
+#####
+# this file is managed by ansible, do not modify
+#####
+
+Protocol 2
+Port 22
+
+AllowTcpForwarding yes
+AuthenticationMethods publickey
+ChallengeResponseAuthentication no
+ClientAliveCountMax 3
+ClientAliveInterval 300
+HostbasedAuthentication no
+IgnoreRhosts yes
+LoginGraceTime 60
+MaxAuthTries 25
+MaxStartups 5
+PasswordAuthentication no
+PermitEmptyPasswords no
+PermitRootLogin No
+PermitTunnel yes
+PubkeyAuthentication yes
+RhostsAuthentication no
+UseDNS no
+UsePAM yes
+X11Forwarding yes

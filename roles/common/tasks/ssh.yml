@@ -27,4 +27,25 @@
     dest: "/home/{{ ansible_user_id }}/.ssh/"
     mode: 0600
   with_fileglob:
-    - "/home/{{ ansible_user_id }}/Sync/ssh-keys/{{ ansible_hostname }}-*"
+    - "/home/{{ ansible_user_id }}/shared/ssh-keys/{{ ansible_hostname }}-*"
+
+- name: Create authorized keys for {{ ansible_hostname }}
+  assemble:
+    src: "/home/{{ ansible_user_id }}/shared/ssh-keys/"
+    dest: "/home/{{ ansible_user_id }}/.ssh/authorized_keys"
+    mode: 0600
+    regexp: "^.*{{ansible_hostname}}\\.key\\.pub$"
+
+- name: Installing OpenSSH Server
+  become: true
+  package:
+    name: openssh-server
+    state: latest
+
+- name: Setup OpenSSH Server Config
+  become: true
+  copy:
+    src: "files/sshd_config"
+    dest: "/etc/ssh/sshd_config"
+  notify:
+    - "reload openssh"

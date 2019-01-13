@@ -16,3 +16,9 @@
   become: yes
   apt:
     update_cache: yes
+
+- name: 'reload openssh'
+  become: yes
+  service:
+    name: ssh
+    state: restarted
