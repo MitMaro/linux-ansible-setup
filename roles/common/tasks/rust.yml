@@ -10,6 +10,6 @@
     dest: /home/{{ ansible_user_id }}/.ansible/downloads/rustup-init.sh
     mode: "a+x"
 
-- name: install rustup
+- name: Install rustup
   command: /home/{{ ansible_user_id }}/.ansible/downloads/rustup-init.sh -y
   when: rustup_check_install.rc != 0
