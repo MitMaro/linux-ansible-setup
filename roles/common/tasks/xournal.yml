@@ -1,0 +1,5 @@
+- name: Installing Xournal
+  become: true
+  package:
+    name: xournal
+    state: latest
