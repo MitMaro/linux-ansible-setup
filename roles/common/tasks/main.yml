@@ -11,6 +11,7 @@
 - include: fonts.yml
 - include: gimp.yml
 - include: git-rebase-tool.yml
+- include: gnome-applets.yml
 - include: gnome-extensions.yml
 - include: imagemagick.yml
 - include: jq.yml

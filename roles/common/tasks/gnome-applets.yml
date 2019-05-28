@@ -1,0 +1,5 @@
+- name: Installing Alarm Clock Applet
+  become: true
+  package:
+    name: alarm-clock-applet
+    state: latest
