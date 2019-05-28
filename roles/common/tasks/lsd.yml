@@ -1,0 +1,8 @@
+- name: Download lsd
+  get_url:
+    url: https://github.com/Peltoche/lsd/releases/download/0.15.1/lsd_0.15.1_amd64.deb
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/lsd_0.15.1_amd64.deb
+- name: Install lsd
+  become: true
+  apt:
+    deb: /home/{{ ansible_user_id }}/.ansible/downloads/lsd_0.15.1_amd64.deb

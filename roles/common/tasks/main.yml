@@ -17,6 +17,7 @@
 - include: jq.yml
 - include: kazam.yml
 - include: keepassxc.yml
+- include: lsd.yml
 - include: mozilla.yml
 - include: nvm.yml
 - include: rust.yml
