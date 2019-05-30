@@ -10,6 +10,12 @@
     name: vim
     state: latest
 
+- name: Install curl
+  become: true
+  package:
+    name: curl
+    state: latest
+
 - name: Install GNU awk
   become: true
   package:
