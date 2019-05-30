@@ -1,0 +1,18 @@
+- name: Download JetBrains Toolbox
+  become: true
+  get_url:
+    url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.14.5179.tar.gz
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/jetbrains-toolbox-1.14.5179.tar.gz
+
+- name: Extract Codeship jet-cli
+  unarchive:
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/jetbrains-toolbox-1.14.5179.tar.gz
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads
+    creates: /home/{{ ansible_user_id }}/.ansible/downloads/jetbrains-toolbox-1.14.5179/jetbrains-toolbox
+
+- name: Install JetBrains Toolbox
+  become: true
+  copy:
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/jetbrains-toolbox-1.14.5179/jetbrains-toolbox
+    dest: /usr/local/bin
+    mode: u=rwx,g=rx,o=rx
