@@ -1,8 +1,8 @@
 - name: Download Git Rebase Tool
   get_url:
-    url: https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
-    dest: /home/{{ ansible_user_id }}/.ansible/downloads/git-interactive-rebase-tool_0.7.0_amd64.deb
+    url: https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/1.0.0/git-interactive-rebase-tool_1.0.0_amd64.deb
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/git-interactive-rebase-tool_1.0.0_amd64.deb
 - name: Install Git Rebase Tool
   become: true
   apt:
-    deb: /home/{{ ansible_user_id }}/.ansible/downloads/git-interactive-rebase-tool_0.7.0_amd64.deb
+    deb: /home/{{ ansible_user_id }}/.ansible/downloads/git-interactive-rebase-tool_1.0.0_amd64.deb
