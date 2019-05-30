@@ -7,5 +7,5 @@
 - name: Install slack
   become: true
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.1.0-amd64.deb
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb
   when: slack_check_deb.rc == 1
