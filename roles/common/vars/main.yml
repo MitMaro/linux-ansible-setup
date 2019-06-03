@@ -11,14 +11,17 @@ git_repositories:
   - dest: /home/{{ ansible_user_id }}/code/ide-sync
     repo: "git@github.com:MitMaro/ide-sync.git"
     remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/kattis-runner
+    repo: "git@github.com:MitMaro/kattis-runner.git"
+    remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/npm-bins
+    repo: "git@github.com:MitMaro/npm-bins.git"
+    remote_name: "gh"
   - dest: /home/{{ ansible_user_id }}/code/programming-problems
     repo: "git@github.com:MitMaro/programming-problem-solutions.git"
     remote_name: "gh"
   - dest: /home/{{ ansible_user_id }}/code/linux-ansible-setup
     repo: "git@github.com:MitMaro/linux-ansible-setup.git"
-    remote_name: "gh"
-  - dest: /home/{{ ansible_user_id }}/code/kattis-runner
-    repo: "git@github.com:MitMaro/kattis-runner.git"
     remote_name: "gh"
 ssh_config:
   - name: github
