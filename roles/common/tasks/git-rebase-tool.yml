@@ -1,7 +1,14 @@
+- name: Install libncursesw5
+  become: true
+  package:
+    name: libncursesw5
+    state: latest
+
 - name: Download Git Rebase Tool
   get_url:
     url: https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/1.0.0/git-interactive-rebase-tool_1.0.0_amd64.deb
     dest: /home/{{ ansible_user_id }}/.ansible/downloads/git-interactive-rebase-tool_1.0.0_amd64.deb
+
 - name: Install Git Rebase Tool
   become: true
   apt:
