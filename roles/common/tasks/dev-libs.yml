@@ -22,6 +22,12 @@
     name: libncurses5-dev
     state: latest
 
+- name: Install libncursesw5-dev
+  become: true
+  package:
+    name: libncursesw5-dev
+    state: latest
+
 - name: Install libssl-dev
   become: true
   package:
