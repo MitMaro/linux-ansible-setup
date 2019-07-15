@@ -1,3 +1,8 @@
+algo_vpn:
+  ip: "{{ lookup('file', '/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/ipaddress') }}"
+  password: "{{ lookup('file', '/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/password') }}"
+  config: "{{ lookup('file', '/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/mitmaro.conf') }}"
+
 git_repositories:
   - dest: /home/{{ ansible_user_id }}/code/cts-website
     repo: "git@github.com:CTS-NL/CTS-NL.github.io.git"
@@ -28,4 +33,3 @@ ssh_config:
     host: github.org
     user: git
     identity: ~/.ssh/{{ ansible_hostname }}-github.key
-

@@ -22,3 +22,9 @@
   service:
     name: ssh
     state: restarted
+
+- name: 'restart ipsec'
+  become: yes
+  service:
+    name: ipsec
+    state: restarted

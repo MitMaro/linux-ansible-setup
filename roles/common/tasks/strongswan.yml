@@ -1,0 +1,52 @@
+- name: Install strongSwan
+  become: true
+  package:
+    name: strongswan
+    state: latest
+
+- name: Install strongSwan standard plugins
+  become: true
+  package:
+    name: libstrongswan-standard-plugins
+    state: latest
+
+- name: Copy ipsec cert
+  become: true
+  copy:
+    src: "/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/mitmaro.crt"
+    dest: "/etc/ipsec.d/certs"
+  notify:
+    - restart ipsec
+
+- name: Copy ipsec private key
+  become: true
+  copy:
+    src: "/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/mitmaro.key"
+    dest: "/etc/ipsec.d/private"
+  notify:
+    - restart ipsec
+
+- name: Copy ipsec CA Certificate
+  become: true
+  copy:
+    src: "/home/{{ ansible_user_id }}/shared/secrets/algo/ipsec/manual/cacert.pem"
+    dest: "/etc/ipsec.d/cacerts"
+  notify:
+    - restart ipsec
+
+- name: Add user to ipsec secrets
+  become: true
+  blockinfile:
+    path: /etc/ipsec.secrets
+    block: "{{ algo_vpn.ip }} : ECDSA mitmaro.key {{ algo_vpn.password }}"
+  notify:
+    - restart ipsec
+
+- name: Add user to ipsec config block
+  become: true
+  blockinfile:
+    path: /etc/ipsec.conf
+    block: "{{ algo_vpn.config }}"
+  notify:
+    - restart ipsec
+
