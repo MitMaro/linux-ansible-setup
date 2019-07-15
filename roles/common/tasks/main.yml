@@ -14,6 +14,7 @@
 - include: gnome-applets.yml
 - include: gnome-extensions.yml
 - include: imagemagick.yml
+- include: inkscape.yml
 - include: jq.yml
 - include: kazam.yml
 - include: keepassxc.yml
