@@ -1,0 +1,31 @@
+- name: Install YubiKey PPA
+  become: true
+  apt_repository:
+    repo: 'ppa:yubico/stable'
+    state: present
+  notify:
+    - "update apt package list"
+
+- name: Installing YubiKey Manager
+  become: true
+  package:
+    name: yubikey-manager
+    state: latest
+
+- name: Installing YubiKey Manager GUI
+  become: true
+  package:
+    name: yubikey-manager
+    state: latest
+
+- name: Installing YubiKey Personalization
+  become: true
+  package:
+    name: yubikey-personalization-gui
+    state: latest
+
+- name: Installing YubiKey Auth Desktop
+  become: true
+  package:
+    name: yubioath-desktop
+    state: latest

@@ -30,6 +30,7 @@
 - include: tilix.yml
 - include: wavebox.yml
 - include: xournal.yml
+- include: yubikey.yml
 - include: zsh.yml
 
 - include: git-repositories.yml
