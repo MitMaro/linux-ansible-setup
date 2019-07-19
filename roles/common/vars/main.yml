@@ -22,6 +22,9 @@ git_repositories:
   - dest: /home/{{ ansible_user_id }}/code/npm-bins
     repo: "git@github.com:MitMaro/npm-bins.git"
     remote_name: "gh"
+  - dest: /home/{{ ansible_user_id }}/code/git-interactive-rebase-tool
+    repo: "git@github.com:MitMaro/git-interactive-rebase-tool.git"
+    remote_name: "gh"
   - dest: /home/{{ ansible_user_id }}/code/programming-problems
     repo: "git@github.com:MitMaro/programming-problem-solutions.git"
     remote_name: "gh"
