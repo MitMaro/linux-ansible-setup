@@ -6,39 +6,39 @@
 # Iosevka
 - name: Download Iosevka Default Fonts
   get_url:
-    url: https://github.com/be5invis/Iosevka/releases/download/v1.14.3/iosevka-ss09-1.14.3.zip
-    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3.zip
+    url: https://github.com/be5invis/Iosevka/releases/download/v2.3.0/iosevka-ss09-2.3.0.zip
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0.zip
 - name: Download Iosevka Terminal Fonts
   get_url:
-    url: https://github.com/be5invis/Iosevka/releases/download/v1.14.3/iosevka-term-ss09-1.14.3.zip
-    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3.zip
+    url: https://github.com/be5invis/Iosevka/releases/download/v2.3.0/iosevka-term-ss09-2.3.0.zip
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0.zip
 - name: Create Iosevka Default Fonts directory
   file:
-    path: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3/
+    path: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0/
     state: directory
 - name: Create Iosevka Terminal Fonts directory
   file:
-    path: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3/
+    path: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0/
     state: directory
 - name: Extract Iosevka Default Fonts
   unarchive:
-    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3.zip
-    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3
-    creates: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3/tff/iosevka-ss09-bold.ttf
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0.zip
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0
+    creates: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0/tff/iosevka-ss09-bold.ttf
 - name: Extract Iosevka Terminal Fonts
   unarchive:
-    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3.zip
-    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3
-    creates: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3/tff/iosevka-term-ss09-bold.ttf
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0.zip
+    dest: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0
+    creates: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0/tff/iosevka-term-ss09-bold.ttf
 - name: Copy Iosevka Default Fonts
   copy:
-    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-1.14.3/ttf/
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-ss09-2.3.0/ttf/
     dest: /home/{{ ansible_user_id }}/.local/share/fonts/
   notify:
     - "rebuild fonts cache"
 - name: Copy Iosevka Terminal Fonts
   copy:
-    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-1.14.3/ttf/
+    src: /home/{{ ansible_user_id }}/.ansible/downloads/iosevka-term-ss09-2.3.0/ttf/
     dest: /home/{{ ansible_user_id }}/.local/share/fonts/
   notify:
     - "rebuild fonts cache"
