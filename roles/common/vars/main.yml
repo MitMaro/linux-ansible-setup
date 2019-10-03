@@ -33,6 +33,6 @@ git_repositories:
     remote_name: "gh"
 ssh_config:
   - name: github
-    host: github.org
+    host: github.com
     user: git
     identity: ~/.ssh/{{ ansible_hostname }}-github.key

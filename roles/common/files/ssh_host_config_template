@@ -7,3 +7,8 @@ Host {{ item.name }}
     User {{ item.user }}
     IdentityFile {{ item.identity }}
 
+Host {{ item.host }}
+    HostName {{ item.host }}
+    User {{ item.user }}
+    IdentityFile {{ item.identity }}
+
