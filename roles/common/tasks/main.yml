@@ -29,6 +29,7 @@
 - include: strongswan.yml
 - include: sysctl.yml
 - include: tilix.yml
+- include: virtualbox.yml
 - include: wavebox.yml
 - include: xournal.yml
 - include: yubikey.yml

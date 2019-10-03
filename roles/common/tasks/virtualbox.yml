@@ -1,0 +1,5 @@
+- name: Installing VirtualBox
+  become: true
+  package:
+    name: virtualbox
+    state: latest
