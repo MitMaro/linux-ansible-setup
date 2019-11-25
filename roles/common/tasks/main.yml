@@ -22,6 +22,7 @@
 - include: jetbrains-toolbox.yml
 - include: mozilla.yml
 - include: nvm.yml
+- include: python.yml
 - include: rust.yml
 - include: slack.yml
 - include: spideroak.yml

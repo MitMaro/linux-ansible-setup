@@ -1,0 +1,34 @@
+- name: Installing pip for Python3
+  become: true
+  package:
+    name: python3-pip
+    state: latest
+
+- name: Installing venv for Python3
+  become: true
+  package:
+    name: python3-venv
+    state: latest
+
+- name: Install pyenv
+  git:
+    repo: 'https://github.com/pyenv/pyenv.git'
+    dest: /home/{{ ansible_user_id }}/.pyenv/
+    depth: 1
+    version: v1.2.15
+
+- name: Install pipx
+  pip:
+    executable: pip3
+    name: pipx
+    extra_args: --user
+
+- name: Check if Poetry is installed
+  shell: poetry --version
+  register: poetry_check_install
+  failed_when: poetry_check_install.rc == 1
+  changed_when: poetry_check_install.rc != 0
+
+- name: Install Poetry
+  command: pipx install poetry
+  when: poetry_check_install.rc != 0
