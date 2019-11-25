@@ -27,7 +27,7 @@
 - include: slack.yml
 - include: spideroak.yml
 - include: stow.yml
-- include: strongswan.yml
+# - include: strongswan.yml
 - include: sysctl.yml
 - include: tilix.yml
 - include: virtualbox.yml
