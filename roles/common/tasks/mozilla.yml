@@ -1,7 +1,7 @@
 - name: Install Mozilla Security PPA
   become: true
   apt_repository:
-    codename: xenial
+    codename: eoan
     repo: 'ppa:ubuntu-mozilla-security/ppa'
     state: present
   notify:
