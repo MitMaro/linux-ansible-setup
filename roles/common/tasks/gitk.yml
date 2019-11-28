@@ -1,0 +1,5 @@
+- name: Installing Gitk
+  become: true
+  package:
+    name: gitk
+    state: latest
