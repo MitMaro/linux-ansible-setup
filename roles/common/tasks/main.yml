@@ -26,6 +26,7 @@
 - include: nvm.yml
 - include: python.yml
 - include: rust.yml
+- include: shellcheck.yml
 - include: slack.yml
 - include: spideroak.yml
 - include: stow.yml

@@ -1,0 +1,5 @@
+- name: Installing Shellcheck
+  become: true
+  package:
+    name: shellcheck
+    state: latest
