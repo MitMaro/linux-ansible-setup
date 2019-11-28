@@ -1,0 +1,5 @@
+- name: Installing Gource
+  become: true
+  package:
+    name: gource
+    state: latest
