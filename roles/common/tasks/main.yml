@@ -21,6 +21,7 @@
 - include: kazam.yml
 - include: keepassxc.yml
 - include: lsd.yml
+- include: flatpak.yml
 - include: jetbrains-toolbox.yml
 - include: mozilla.yml
 - include: nvm.yml

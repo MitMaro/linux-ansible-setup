@@ -1,0 +1,12 @@
+- name: Installing Flatpack
+  become: true
+  package:
+    name: flatpak
+    state: latest
+
+- name: Add the default Flatpack repository
+  become: true
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
