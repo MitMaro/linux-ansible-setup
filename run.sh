@@ -13,7 +13,7 @@ if ! command -v pip &> /dev/null ; then
 	sudo apt install -y python-pip
 fi
 
-if ! ( command -v ansible &> /dev/null && [[ "$(ansible --version | head -1 | awk '{print $2}')" == "2.5.0" ]] ); then
+if ! ( command -v ansible &> /dev/null && [[ "$(ansible --version | head -1 | awk '{print $2}')" == "2.9.0" ]] ); then
 	pip install --user -r requirements.txt
 fi
 
