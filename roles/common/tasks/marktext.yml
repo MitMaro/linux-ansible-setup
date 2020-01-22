@@ -1,0 +1,5 @@
+- name: Install Marktext
+  become: true
+  flatpak:
+    name: com.github.marktext.marktext
+    state: present

@@ -23,6 +23,7 @@
 - include: lsd.yml
 - include: flatpak.yml
 - include: jetbrains-toolbox.yml
+- include: marktext.yml
 - include: mozilla.yml
 - include: nvm.yml
 - include: python.yml
