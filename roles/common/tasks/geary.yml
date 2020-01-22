@@ -1,0 +1,5 @@
+- name: Install Geary
+  become: true
+  flatpak:
+    name: org.gnome.Geary
+    state: present
