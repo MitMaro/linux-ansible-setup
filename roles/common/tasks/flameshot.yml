@@ -1,0 +1,5 @@
+- name: Installing Flameshot
+  become: true
+  package:
+    name: flameshot
+    state: latest

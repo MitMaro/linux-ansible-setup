@@ -8,6 +8,7 @@
 - include: dev-libs.yml
 - include: docker.yml
 - include: ffmpeg.yml
+- include: flameshot.yml
 - include: fonts.yml
 - include: geary.yml
 - include: gimp.yml
